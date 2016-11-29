@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  {% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'login_reg_app/css/style.css' %}">
+
+  <title>Login Success</title>
+</head>
+<body>
+
+  <div id='container'>
+    <div id="navbar">
+      <ul>
+        <li><a href=" {% url 'books:index' %} ">Manage (add/delete) books</a></li>
+      
+      </ul>
+ </div> <!-- end navbar -->
+  <h1>Login & Register Success</h1>
+    <div id='wrapper'>
+	<h2>Success!  Welcome {{ request.session.alias }}!</h2>
+    <h2>You've successfully {{ path }}</h2>
+    </div> <!-- end wrapper -->
+  </div> <!-- end container -->
+  
+</body>
+</html>
+
+

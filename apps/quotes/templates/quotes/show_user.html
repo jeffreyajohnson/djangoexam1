@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Profile</title>
+<meta charset="utf-8">
+	
+</head>
+<body>
+<div id="container">
+<div id="navbar">
+      <ul>
+        <li><a href=" {% url 'quotes:index' %} ">Dashboard</a></li>
+        <li><a href="{% url 'quotes:logout' %}">Logout</a></li> 
+      </ul>
+ </div> <!-- end navbar -->
+    <div id='wrapper'>
+    <h3>Posts by {{user.alias}}:</h3>
+    <h3>Count: {{ user.num_postings }}
+    <div id="quotes_area">
+        {% for quote in quotes %}
+            <p>{{quote.author}}: {{quote.quote}}</p>
+        {% endfor %} 
+    </div>   
+    </div> <!-- end wrapper -->
+  </div> <!-- end container -->  
+</body>
+</html>

@@ -1,0 +1,127 @@
+*{
+margin: 0px auto;
+padding: 0px;	
+/*outline: 1px dotted blue;*/
+}
+
+#container{
+	margin-top:30px;
+	padding: 2px 20px 20px;
+	/*background-color: yellow;*/
+	width: 900px;
+	border: 1px solid black;
+}
+.formbox{
+	width: 400px;
+	border: 1px solid black;
+	margin-top: 30px;
+	padding-left: 10px;
+}
+
+.formbox h1{
+	text-align: center;
+	/*background-color: gold;*/
+	margin-top: 0px;
+	margin-left: 0px;
+	padding-left: 0px;
+	font-size: 28px;
+}
+
+.btn-primary{
+	margin: 15px 0px 10px 200px;
+}
+
+.input-group{
+	width: 400px;
+    margin: 10px;
+}
+
+label{
+	margin-left: 15px;
+}
+
+#register_area, #login_area{
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 10px;
+}
+#register_area{
+	margin-left: 20px;
+}
+#errors{
+	margin: 20px 200px 0px 110px;
+	padding-left: 20px;
+	background-color: red;
+	color: yellow
+}
+#main_area, #messages_area{
+	margin-left: 20px;
+}
+#main_area h1{
+	color: darkblue;
+	font-size: 26px;
+	font-weight: bold;
+}
+#main_area textarea{
+	width: 800px;
+	height: 100px;
+	border-style: 
+}
+
+#post_button{
+	margin: 10px 0px 10px 670px;
+}
+#messages_area h4{
+	margin-top: 20px;
+	font-weight: bold;
+}	
+#messages_area p{
+	margin-left: 20px;
+	margin-bottom: 20px;		
+}	
+#header{
+	/*background-color: silver;*/
+	border-bottom: 2px solid black
+}
+#header h1{
+	width: 200px;
+	display: inline-block;
+	font-weight: bold;
+	color: red
+}
+#header p{
+	width: 600px;
+	display: inline-block;
+	text-align: right;
+}
+#header a{
+	width: 50px;
+	display: inline-block;
+	text-align: right;
+	text-decoration: underline;
+}
+#messages_area{
+	/*background-color: yellow*/
+}
+#comments_area{
+	/*background-color: green;*/
+	margin-left: 40px;
+}
+#messages_area h1{
+	color: darkgreen;
+	font-size: 26px;
+}
+#messages_area textarea{
+	width: 800px;
+	height: 60px;
+	border-style: 
+}
+
+#comment_button{
+	margin: 10px 0px 10px 670px;
+	background-color: darkgreen
+}
+#navbar li{
+	display: inline-block;
+	padding: 10px;
+}

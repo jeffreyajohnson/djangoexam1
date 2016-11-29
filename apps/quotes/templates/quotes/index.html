@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quotes Home</title>
+<meta charset="utf-8">
+	<!-- Latest boostrap compiled and minified CSS -->
+<!-- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'quote_app/css/style.css' %}">
+</head>
+<body>
+<div id="container">
+<div id="navbar">
+      <ul>
+        <li><a href="{% url 'quotes:logout' %}">Logout</a></li>
+      </ul>
+      <h2>Welcome {{ request.session.alias }}!</h2>
+ </div> <!-- end navbar -->
+    <div id='wrapper'>
+  	<h2>Quotable Quotes:</h2>
+        {% for quote in quotes %}
+          <p>{{ quote.author }}: {{quote.quote}}    
+          <p>Posted by <a href="">{{ quote.submitter.alias }}</a></p> 
+          <a href="{% url 'quotes:favorite' id=quote.id %}">Add To My List</a>
+        {% endfor %}
+    <div id="favorites">
+    <h2>My Favorites</h2>
+     {% for favorite in favorites %}
+      <p>{{ favorite.quote.author }}: {{favorite.quote.quote}}</p> 
+          <p>Posted by <a href="{% url 'quotes:user' id=favorite.user.id %}">{{ favorite.user.alias }}</a></p> 
+          <a href="{% url 'quotes:remove' id=favorite.quote.id %}">Remove From My List</a>
+     {% endfor %}
+      
+    </div> <!-- end favorites -->
+ 
+    <div id="form_area">
+      <form action="{% url 'quotes:create' %} " method="post" id="quote_form">
+        {% csrf_token %}    
+        <h3>Contribute a Quote:</h3>
+        <label>Quoted by:</label>
+        <input type="text" name="author"><br>
+        <label>Message</label>
+        <textarea rows="4" cols="45" name="quote" form="quote_form"></textarea><br>
+
+
+        <button type="submit" class="btn btn-primary" form="quote_form" value="Submit">Submit Quote</button>
+      </form>   
+      <div id='errors'> 
+        {% for error in errors %}
+        <p> {{ error }} </p>
+        {% endfor %}
+      </div>
+    </div> <!-- end wrapper -->
+  </div> <!-- end container -->
+  
+</body>
+</html>
